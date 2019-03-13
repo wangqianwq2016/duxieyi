@@ -1,0 +1,43 @@
+<!--info.wxml-->
+<view class="container {{modalOn?'no-scroll':'aa'}}">
+  <text wx:if="" class="connection-error">{{mp.connectionError}}</text>
+  <block wx:else>
+    <view class="top-bar">
+      {{appTitle}}<block wx:if="{{splitView}}"> vs {{appTitleComp}} </block>
+    </view>
+    <view class="app-info">
+      <view class="row">
+        <view class="col">
+          <image class="app-icon" src="{{appIcon}}"/>
+          <text class="app-title">{{appTitle}}</text>
+        </view>
+        <view class="col" wx:if="{{!splitView}}" bindtap='addComp'>
+            <text class="app-icon app-add">+</text>
+            <text class="app-title">添加对比</text>
+        </view>
+        <view class="col" wx:if="{{splitView}}" >
+          <image class="app-icon" src="{{appIconComp}}"/>
+          <text class="app-title">{{appTitleComp}}</text>
+        </view>
+        <view class="app-del" wx:if="{{splitView}}" bindtap='delComp'>
+            <text wx:if="1">×</text>
+          </view>
+      </view>
+    </view>
+    <block wx:for="{{appTerms}}">
+      <text class="applist-title">{{item.title}}</text>
+      <text class="applist-full-content" wx:if="{{!splitView}}">{{item.content}}</text>
+      <view class="applist-line" wx:if="{{splitView}}">
+      <text class="applist-half-content">{{item.content}}</text>
+      <text class="applist-half-content">{{item.content_2}}</text>
+      </view>
+    </block>
+  </block>
+</view>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{modalOn}}"></view>  
+<scroll-view scroll-y="true" animation="{{animationData}}" class="commodity_attr_box" wx:if="{{modalOn}}">
+  <view class="applist-item" wx:for="{{appList}}" id="{{item.index}}" bindtap="enterComp" wx:key="name">
+    <image class="applist-icon" src="{{item.appIcon}}" mode="cover"></image>
+    <text class="applist-name">{{item.name}}</text>
+  </view>
+</scroll-view>

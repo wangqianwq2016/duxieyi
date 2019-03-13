@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <text wx:if="" class="connection-error">{{mp.connectionError}}</text>
+  <block wx:else>
+    
+    <text class="applist-title">{{appListTitle}}</text>
+    <view class="applist" >
+      <view class="applist-single"  wx:for="{{appList}}" id="{{item.index}}" bindtap="bindViewTap" wx:key="name">
+        <image class="applist-icon" src="{{item.appIcon}}" mode="cover"></image>
+        <text class="applist-name">{{item.name}}</text>
+      </view>
+
+    </view>
+  </block>
+</view>

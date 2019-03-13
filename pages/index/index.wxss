@@ -1,0 +1,43 @@
+/**index.wxss**/
+.applist {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  justify-self: center;
+  flex-wrap: wrap;
+  padding: 50rpx 0;
+}
+.applist-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 55rpx;
+  width: 25%;
+}
+.applist-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 12rpx;
+  border-radius: 25%;
+}
+
+.applist-name {
+  justify-self: center;
+  font-size: 0.75rem;
+}
+.applist-title{
+  font-size: 1.75rem;
+  padding:0 50rpx;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.container{
+  margin-top: 0px;
+  padding: 60rpx 15px 30rpx;
+  display: flex;
+  align-self: start;
+  max-width: 100%;
+  overflow: hidden;
+}
